@@ -5,8 +5,13 @@
 body{
   margin: 0;
 }
+.loginForm{
+  height: 100vh;
+  background-image: radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%));
+  background-color: white;
+}
 .image {
-    background-color: #c1c5c9;
+    background-color: white;
     border-radius: 10px;
   
     margin:20px 30%;
@@ -14,11 +19,14 @@ body{
     position: relative;
     height: 90vh;
     border: rgb(237, 233, 233) solid 1px;
+    box-shadow: hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px;
+    /* box-shadow: hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px; */
+    
   }
   .image img {
     border-radius: 30px;
     /* border-top-right-radius: 30px ; */
-    object-fit: contain;
+    object-fit: cover;
     height: 90vh;
     width: 100%;
   }
@@ -28,7 +36,7 @@ body{
     flex-direction: column; /* Aligne les éléments verticalement */
     justify-content: center; /* Centre les éléments verticalement */
     align-items: center; /* Centre les éléments horizontalement */
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
   
     img {
       /* filter: grayscale(100%); */
@@ -37,7 +45,9 @@ body{
     }
   
     h2{
-      font-size: 3em;
+      font-size: 1.7em;
+      
+      align-items: start;
       line-height: 1.1;
     }
   }
@@ -56,22 +66,29 @@ body{
   
   .form-input {
     width: 100%; /* Largeur maximale */
-    height: 30px; /* Hauteur uniforme */
-    border: none; /* Pas de bordure complète */
+    height: 45px; /* Hauteur uniforme */
+    border: 1px solid #f1e9e9;
+    border-radius: 10px;
     margin-bottom: 10px; /* Espacement entre les champs */
     outline: none; /* Pas de contour au focus */
     background-color: transparent;
     color: black;
     font-size: large;
+    &::placeholder {
+    color: rgb(121, 121, 115);
+      
+    }
   }
   
   .form-input:focus {
-    border-bottom: 2px solid #007bff; /* Couleur de bordure au focus */
+    /* border-bottom: 2px solid #007bff;  */
+    /* Couleur de bordure au focus */
   }
   
   .input-wrapper {
     display: flex;
-    border-bottom: 1px solid #bcb9b9;
+    /* border: 1px solid #bcb9b9; */
+    border-radius: 10px;
     margin-bottom: 10px;
     padding: 5px;
   }
@@ -100,8 +117,8 @@ body{
       padding: 4px 40px;
       width: 100%;
       /* background-color: rgb(87, 121, 206); */
-      /* color: black; */
-      text-transform: uppercase;
+      /* color: white; */
+      /* text-transform: uppercase; */
       background-color: black;
       color: aliceblue;
       &:hover {

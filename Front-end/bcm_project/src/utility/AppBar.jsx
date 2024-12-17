@@ -64,12 +64,12 @@ export default function PrimarySearchAppBar() {
 
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const Logout = () => {
         localStorage.removeItem("token");
         navigate("/");
-      };
+    };
 
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
@@ -105,8 +105,8 @@ export default function PrimarySearchAppBar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={Logout}>Logout</MenuItem>
+            {/* <MenuItem onClick={handleMenuClose}>Profile</MenuItem> */}
+            {/* <MenuItem onClick={Logout}>Logout</MenuItem> */}
         </Menu>
     );
 
@@ -161,10 +161,11 @@ export default function PrimarySearchAppBar() {
             </MenuItem>
         </Menu>
     );
+    
 
     return (
-        <Box sx={{ flexGrow: 1 ,}}>
-            <AppBar position="static" >
+        <Box sx={{ flexGrow: 1 , color:'white'}}>
+            <AppBar position="static"  >
                 <Toolbar>
                     {/* <IconButton
                         size="large"
@@ -183,7 +184,7 @@ export default function PrimarySearchAppBar() {
                     >
                         {/* BCM */}
                     </Typography>
-                    <h3 className="text-center mx-1 fst-italic">BCMA</h3>
+                    <h3 className="text-center mx-1 fst-italic">BCM Alertes</h3>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -196,6 +197,9 @@ export default function PrimarySearchAppBar() {
                     
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                                <ExitToAppIcon onClick={Logout}/>
+                        </IconButton>
                         {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <MailIcon />
@@ -211,7 +215,7 @@ export default function PrimarySearchAppBar() {
                             </Badge>
                         </IconButton> */}
                         
-                        <IconButton
+                        {/* <IconButton
                             size="large"
                             edge="end"
                             aria-label="account of current user"
@@ -221,7 +225,7 @@ export default function PrimarySearchAppBar() {
                             color="inherit"
                         >
                             <AccountCircle />
-                        </IconButton>
+                        </IconButton> */}
                         {/* <IconButton
                             size="large"
                             color="inherit"
@@ -243,6 +247,7 @@ export default function PrimarySearchAppBar() {
                             <MoreIcon />
                         </IconButton>
                     </Box>
+                    
                 </Toolbar>
             </AppBar>
             {renderMobileMenu}

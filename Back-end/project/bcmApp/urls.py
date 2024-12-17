@@ -7,6 +7,8 @@ from .views import FilesViewSet
 router = DefaultRouter()
 
 router.register('files', FilesViewSet, basename='files')
+router.register('types', FilesViewSet, basename='types')
+router.register('actions', FilesViewSet, basename='actions')
 
 urlpatterns = [
     path('api/', include(router.urls)),  # For token authentication
